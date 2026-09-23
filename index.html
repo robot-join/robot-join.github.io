@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Where Should I Join? Robot Group Joining via Language-Guided Goal Prediction">
+  <meta name="description" content="This paper presents a method to ground language descriptions and predict valid robot joining poses.">
+  <meta name="keywords" content="Robot Navigation, Social Navigation, Group Joining">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+
+  <title>Robot Group Joining via Language-Guided Goal Prediction</title>
+  
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="static/images/group-icon.png">
+  <link rel="apple-touch-icon" href="static/images/group-icon.png">
+  
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+  
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+  
+
+</head>
+<body>
+
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+
+
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Where Should I Join? Robot Group Joining via Language-Guided Goal Prediction</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://robot-join.github.io" target="_blank">Zilin Fang</a>,</span>
+                <span class="author-block">
+                  <a href="https://robot-join.github.io" target="_blank">Zishuo Wang</a>,</span>
+                  <span class="author-block">
+                    <a href="https://www.comp.nus.edu.sg/~leegh/" target="_blank">Gim Hee Lee</a><sup>*</sup>,</span>
+                    <span class="author-block">
+                      <a href="https://www.comp.nus.edu.sg/~dyhsu/" target="_blank">David Hsu</a><sup>*</sup>
+                    </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">National University of Singapore<br></span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                      <!-- <span class="link-block">
+                        <a href="https://robot-join.github.io" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span> -->
+
+                  <span class="link-block">
+                    <a href="https://robot-join.github.io" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (Coming Soon)</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://robot-join.github.io" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video poster="" id="banner" autoplay controls muted loop height="100%" preload="metadata">
+        <source src="static/videos/banner_result.mp4" type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        Our approach grounds language descriptions of target groups to individual members and predicts valid joining poses for static and dynamic robot group interactions.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Social navigation typically assumes a specified goal and focuses on reaching it while respecting social conventions, whereas robot group joining requires predicting where to join based on the group's real-time activity and formation. 
+            This is a highly semantic task, yet an important capability for applications such as robotic guide dogs and autonomous mobility scooters. 
+          </p>
+          <p>
+            We formulate language-grounded robot group joining: given an observation and a natural-language description of a target group, the robot identifies the relevant group members and predicts socially compliant joining poses. 
+            For grounding, we generate structured candidate subsets through recursive spectral partitioning and rank them with a language-conditioned image–geometry model. 
+            Given the grounded group, a goal predictor leverages human-formation priors to produce a multimodal energy–orientation map over feasible robot poses. 
+          </p>
+          <p>
+            Experiments on conversations, queues, and audiences across varying group sizes, crowd densities, and visual ambiguities show that our method achieves competitive grounding accuracy with sub-second inference and outperforms all baselines in joining-pose prediction. 
+            Real-robot experiments further demonstrate group joining in both static and dynamically changing interactions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<!-- Video -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <!-- Paper video. -->
+          <h2 class="title is-3">Video</h2>
+          <div class="publication-video">
+            <video poster="" id="summary" controls muted loop height="100%" preload="metadata">
+              <source src="static/videos/full_video.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End video -->
+
+
+<!-- Content -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="column is-full-width">
+
+      <h2 class="title is-4">System</h2>
+      <div class="content has-text-justified">
+        <p>
+          Social robot navigation task can be conceptually understood as a multi-objective optimization problem, where one set of costs captures path specifications (e.g., time to goal) and environment constraints (e.g., untraversable obstacles),
+          and another encodes social considerations. We assume the overall objective is decomposable into geometric feasibility and in-context semantics, with semantic optima forming a well-covered subset of the geometric-optimal set.
+        </p>
+        <p>
+          <em>Core idea:</em> Generate path candidates that satisfy geometric constraints from sensor data, then use a fine-tuned VLM to select the socially compliant path.
+        </p>
+        <img src="static/images/system.jpg" class="interpolation-image" alt="Interpolate start reference image."/>
+      </div>
+
+      <h2 class="title is-4">Results</h2>
+      <div class="content has-text-justified">
+        <p>
+          Without social compliance, the goal is set directly ahead of the start position (red map pin), producing a shortest collision-free path. 
+          However, such paths violate social norms.
+          Our method performs well across different scenarios, enabling collision-free navigation while respecting social zones and minimizing personal space violation.
+        </p>
+        <img src="static/images/exps.jpg" class="interpolation-image" alt="Interpolate start reference image."/>
+        <p></p>
+        <p>
+          We compare social compliance against five representative baselines—including group-based, RL-based, and VLM-based methods—across four scenarios.
+          Our method consistently achieves the <em> lowest proportion of socially non-compliant behavior relative to navigation time </em> on all metrics: 
+          Personal Space Violation duration (PSV), Time Facing Pedestrians (TFP), Social-zone Interruption Time (SIT), and Maximum Social-zone Interruption Ratio (Max. SIR).
+        </p>
+        <img src="static/images/metrics.png" class="interpolation-image" alt="Interpolate start reference image."/>
+      </div>
+
+      <h2 class="title is-4">Robustness</h2>
+      <div class="content has-text-justified">
+      <p>
+        Across multiple trials and varying goal positions (yellow triangle), the system maintains socially compliant navigation and exhibits multi-modal detouring behaviors around human groups (e.g., detouring from either side).
+      </p>
+      <video poster="" id="robust" autoplay controls muted loop height="100%" preload="metadata">
+        <source src="static/videos/talk_moretrial.mp4" type="video/mp4">
+      </video>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- End content -->
+
+
+
+
+<!--BibTex citation -->
+<section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>@article{fang2026socialnav,
+  title={From Obstacles to Etiquette: Robot Social Navigation With VLM-Informed Path Selection},
+  author={Fang, Zilin and Xiao, Anxing and Hsu, David and Lee, Gim Hee},
+  journal={IEEE Robotics and Automation Letters},
+  year={2026},
+  volume={11},
+  number={4},
+  pages={3947-3954},
+  doi={10.1109/LRA.2026.3662586}
+}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
