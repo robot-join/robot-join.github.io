@@ -73,7 +73,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Where Should I Join? Robot Group Joining via Language-Guided Goal Prediction</h1>
+            <h1 class="title is-1 publication-title"><p>Where Should I Join?</p> <p>Robot Group Joining via Language-Guided Goal Prediction</p></h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
                 <a href="https://robot-join.github.io" target="_blank">Zilin Fang</a>,</span>
@@ -113,7 +113,7 @@
                 </span>
 
                 <span class="link-block">
-                  <a href="https://robot-join.github.io" target="_blank"
+                  <a href="http://arxiv.org/abs/2609.28467" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
@@ -157,7 +157,7 @@
             This is a highly semantic task, yet an important capability for applications such as robotic guide dogs and autonomous mobility scooters. 
           </p>
           <p>
-            We formulate language-grounded robot group joining: given an observation and a natural-language description of a target group, the robot identifies the relevant group members and predicts socially compliant joining poses. 
+            We formulate <strong>language-grounded robot group joining</strong>: given an observation and a natural-language description of a target group, the robot identifies the relevant group members and predicts socially compliant joining poses. 
             For grounding, we generate structured candidate subsets through recursive spectral partitioning and rank them with a language-conditioned image–geometry model. 
             Given the grounded group, a goal predictor leverages human-formation priors to produce a multimodal energy–orientation map over feasible robot poses. 
           </p>
@@ -181,7 +181,7 @@
           <!-- Paper video. -->
           <h2 class="title is-3">Video</h2>
           <div class="publication-video">
-            <video poster="" id="summary" controls muted loop height="100%" preload="metadata">
+            <video poster="" id="summary" controls loop height="100%" preload="metadata">
               <source src="static/videos/full_video.mp4" type="video/mp4">
             </video>
           </div>
@@ -198,48 +198,50 @@
   <div class="container is-max-desktop">
     <div class="column is-full-width">
 
-      <h2 class="title is-4">System</h2>
+      <h2 class="title is-4">Two-stage Pipeline</h2>
       <div class="content has-text-justified">
-        <p>
-          Social robot navigation task can be conceptually understood as a multi-objective optimization problem, where one set of costs captures path specifications (e.g., time to goal) and environment constraints (e.g., untraversable obstacles),
-          and another encodes social considerations. We assume the overall objective is decomposable into geometric feasibility and in-context semantics, with semantic optima forming a well-covered subset of the geometric-optimal set.
-        </p>
-        <p>
-          <em>Core idea:</em> Generate path candidates that satisfy geometric constraints from sensor data, then use a fine-tuned VLM to select the socially compliant path.
-        </p>
-        <img src="static/images/system.jpg" class="interpolation-image" alt="Interpolate start reference image."/>
-      </div>
-
-      <h2 class="title is-4">Results</h2>
-      <div class="content has-text-justified">
-        <p>
-          Without social compliance, the goal is set directly ahead of the start position (red map pin), producing a shortest collision-free path. 
-          However, such paths violate social norms.
-          Our method performs well across different scenarios, enabling collision-free navigation while respecting social zones and minimizing personal space violation.
-        </p>
-        <img src="static/images/exps.jpg" class="interpolation-image" alt="Interpolate start reference image."/>
+        <img src="static/images/task_pipeline.jpg" class="interpolation-image" alt="Interpolate start reference image."/>
+        
         <p></p>
         <p>
-          We compare social compliance against five representative baselines—including group-based, RL-based, and VLM-based methods—across four scenarios.
-          Our method consistently achieves the <em> lowest proportion of socially non-compliant behavior relative to navigation time </em> on all metrics: 
-          Personal Space Violation duration (PSV), Time Facing Pedestrians (TFP), Social-zone Interruption Time (SIT), and Maximum Social-zone Interruption Ratio (Max. SIR).
+          <em>Group Grounding:</em> Identify the task-relevant subset of observed people corresponding to the language instruction.
+          We generate structured candidate subsets through divisive spectral clustering and rank them with a model trained via pairwise comparison.
         </p>
-        <img src="static/images/metrics.png" class="interpolation-image" alt="Interpolate start reference image."/>
-      </div>
+        <img src="static/images/result_ground.jpg" class="interpolation-image" alt="Interpolate start reference image."/>
 
-      <h2 class="title is-4">Robustness</h2>
-      <div class="content has-text-justified">
-      <p>
-        Across multiple trials and varying goal positions (yellow triangle), the system maintains socially compliant navigation and exhibits multi-modal detouring behaviors around human groups (e.g., detouring from either side).
-      </p>
-      <video poster="" id="robust" autoplay controls muted loop height="100%" preload="metadata">
-        <source src="static/videos/talk_moretrial.mp4" type="video/mp4">
-      </video>
+        <p></p>
+        <p>
+          <em>Goal Prediction:</em> Generate an energy–orientation map over valid joining poses using a top-down representation encoding group membership and human poses.
+        </p>
+        <img src="static/images/result_goal.jpg" class="interpolation-image" alt="Interpolate start reference image."/>
+        <p>(Some test scenarios are from <a href="https://jrdb.erc.monash.edu/dataset/">JRDB</a> and <a href="https://www.cs.utexas.edu/~xiao/SCAND/SCAND.html">SCAND</a> datasets)</p>
       </div>
 
     </div>
   </div>
 </section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="column is-full-width">
+      
+      <h2 class="title is-4">Baseline Comparisons</h2>
+      <div class="content has-text-justified">
+        <video poster="" id="banner" autoplay controls muted loop height="100%" preload="metadata">
+          <source src="static/videos/baseline1.mp4" type="video/mp4">
+        </video>
+
+        <p></p>
+        <video poster="" id="banner" autoplay controls muted loop height="100%" preload="metadata">
+          <source src="static/videos/baseline2.mp4" type="video/mp4">
+        </video>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 <!-- End content -->
 
 
@@ -255,16 +257,7 @@
           <span class="copy-text">Copy</span>
         </button>
       </div>
-      <pre id="bibtex-code"><code>@article{fang2026socialnav,
-  title={From Obstacles to Etiquette: Robot Social Navigation With VLM-Informed Path Selection},
-  author={Fang, Zilin and Xiao, Anxing and Hsu, David and Lee, Gim Hee},
-  journal={IEEE Robotics and Automation Letters},
-  year={2026},
-  volume={11},
-  number={4},
-  pages={3947-3954},
-  doi={10.1109/LRA.2026.3662586}
-}</code></pre>
+      <pre id="bibtex-code"><code>   </code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
